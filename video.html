@@ -1,0 +1,58 @@
+<!-- video.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B7bk - Home</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand&display=swap" rel="stylesheet">
+</head>
+<body>
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="images/b7bk.bg.mp4" type="video/mp4" />
+  </video>
+
+  <header>
+  <div class="header-container">
+    <div class="logo">
+      <h1>B7bk</h1>
+    </div>
+    <nav class="nav-links">
+      <a class="home-button" href="index.html">
+        <i class="fas fa-heart"></i> Home
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h2 class="video-title">B7bkkkkk ya Bibaaaaaaaa</h2>
+
+  <div class="video-frame">
+    <div class="video-box">
+      <video controls preload="metadata" class="video-element">
+        <source src="images/b7bk.video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="video-caption">Ana 3aref en ana 8let f 72k ktir bs bgd ana asef w bgd ana b7bk awy ya habiba wallahi w b7b kol l7za m3aki❤</p>
+  </div>
+</main>
+
+
+
+  <footer>
+    &copy; 2025 Made with ❤️ by Kareem for you myl
+  </footer>
+  <script>
+  document.querySelectorAll('.love-button').forEach(button => {
+    button.addEventListener('click', () => {
+      document.body.classList.add('disable-hover');
+    });
+  });
+</script>
+
+</body>
+</html>

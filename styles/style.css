@@ -1,0 +1,284 @@
+/* Base & Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: #ffffff;
+  color: #444;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Background Video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #d63384;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(255, 182, 193, 0.2);
+  z-index: 10;
+}
+
+.logo h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #ffffff;
+}
+
+/* Paragraph in main */
+main p {
+  font-size: 1.15rem;
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff0f5;
+  border-radius: 12px;
+  border-left: 4px solid #ffb6c1;
+  box-shadow: 0 0 12px rgba(255, 182, 193, 0.2);
+}
+
+/* Year Page Description Text (specific to body > p) */
+body > p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 10px auto 40px;
+  padding: 15px 25px;
+  color: #555;
+  background: #fff8fb;
+  border-left: 4px solid #ffb6c1;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.1);
+}
+
+/* Years Section Title */
+.years {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  color: #d63384;
+  margin-top: 140px;
+  margin-bottom: 80px;
+  text-shadow: 0 1px 2px rgba(255, 182, 193, 0.2);
+}
+
+.years h2 {
+  font-size: 1.8rem;
+  margin-bottom: 60px;
+  color: #d63384;
+}
+
+/* Section holding the buttons */
+section.years {
+  margin-bottom: 80px;
+  padding: 0 20px;
+}
+
+/* Button Grid Layout */
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+
+/* Love Buttons (as <a>) */
+.love-button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #d63384;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  box-shadow: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+}
+
+.love-button:hover {
+  background-color: #fff;
+  color: #d63384;
+  border: 2px solid #d63384;
+}
+
+.love-button:active {
+  background-color: #fff;
+  color: #d63384;
+}
+
+.love-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 0.95rem;
+  background: #d63384;
+  border-top: 1px solid #ffd6e3;
+  color: #ffffff;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.03);
+  text-align: center;
+}
+
+/* Responsive tweak */
+@media (max-width: 600px) {
+  .love-button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  body > p {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+}
+/* Header Layout */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Home Button in Header */
+.nav-links .home-button {
+  display: inline-block;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #d63384;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.nav-links .home-button:hover {
+  background-color: #fff;
+  color: #d63384;
+  border: 2px solid #d63384;
+}
+
+/* Additional Styling for Single Day Page */
+
+/* Container for the day content */
+.dates {
+  margin-bottom: 80px;
+}
+
+/* Paragraph spacing under date */
+body > .years + .dates + p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background: #fff0f5;
+  border-left: 4px solid #ffb6c1;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
+  line-height: 1.6;
+}
+
+/* Fix Footer Overlap Issue on Small Pages */
+footer {
+  margin-top: auto;
+  position: relative;
+}
+
+/* Add a bit of space below content if short */
+body::after {
+  content: "";
+  display: block;
+  height: 60px;
+}
+
+/* Mobile Optimization for Header Nav */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links .home-button {
+    align-self: flex-end;
+    margin-right: 20px;
+  }
+}
+/* Video Page Title */
+.video-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #d63384;
+  margin-top: 160px;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 2px rgba(255, 182, 193, 0.2);
+}
+
+/* Smaller Video Container */
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  margin: 0 auto 60px;
+  max-width: 480px; 
+  background-color: #fff0f5;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(255, 182, 193, 0.2);
+}
+
+/* Video Styling */
+.video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  outline: none;
+}
+
+/* Responsive Tweak */
+@media (max-width: 540px) {
+  .video-container {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .video-title {
+    font-size: 1.6rem;
+  }
+}
