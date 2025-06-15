@@ -61,7 +61,7 @@ main p {
   box-shadow: 0 0 12px rgba(255, 182, 193, 0.2);
 }
 
-/* Year Page Description Text (specific to body > p) */
+/* Year Page Description Text */
 body > p {
   font-size: 1.2rem;
   max-width: 700px;
@@ -90,13 +90,11 @@ body > p {
   color: #d63384;
 }
 
-/* Section holding the buttons */
 section.years {
   margin-bottom: 80px;
   padding: 0 20px;
 }
 
-/* Button Grid Layout */
 .grid {
   display: flex;
   justify-content: center;
@@ -106,7 +104,6 @@ section.years {
   margin-top: 20px;
 }
 
-/* Love Buttons (as <a>) */
 .love-button {
   display: inline-block;
   text-decoration: none;
@@ -117,7 +114,6 @@ section.years {
   background-color: #d63384;
   border-radius: 30px;
   border: 2px solid transparent;
-  box-shadow: none;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
   cursor: pointer;
 }
@@ -138,7 +134,6 @@ section.years {
   box-shadow: none;
 }
 
-/* Footer */
 footer {
   width: 100%;
   padding: 12px 0;
@@ -152,7 +147,6 @@ footer {
   margin-top: auto;
 }
 
-/* Responsive tweak */
 @media (max-width: 600px) {
   .love-button {
     width: 100%;
@@ -165,7 +159,6 @@ footer {
   }
 }
 
-/* Header Layout */
 .header-container {
   display: flex;
   align-items: center;
@@ -173,9 +166,19 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  flex-wrap: wrap;
 }
 
-/* Home Button in Header */
+.logo {
+  flex: 1;
+  text-align: left;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
 .nav-links .home-button {
   display: inline-block;
   padding: 10px 22px;
@@ -195,7 +198,6 @@ footer {
   border: 2px solid #d63384;
 }
 
-/* Additional Styling for Single Day Page */
 .dates {
   margin-bottom: 80px;
 }
@@ -214,28 +216,34 @@ body > .years + .dates + p {
   line-height: 1.6;
 }
 
-/* Add a bit of space below content if short */
 body::after {
   content: "";
   display: block;
   height: 60px;
 }
 
-/* Mobile Optimization for Header Nav */
 @media (max-width: 768px) {
   .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+  }
+
+  .logo h1 {
+    font-size: 2rem;
+  }
+
+  .nav-links {
+    text-align: right;
   }
 
   .nav-links .home-button {
-    align-self: flex-end;
-    margin-right: 20px;
+    margin-right: 0;
   }
 }
 
-/* Video Page Title */
 .video-title {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
@@ -245,52 +253,54 @@ body::after {
   text-shadow: 0 1px 2px rgba(255, 182, 193, 0.2);
 }
 
-/* Video Container with 16:9 aspect ratio */
 .video-frame {
-  margin: 60px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #fff0f5;
+  border-radius: 20px;
   padding: 20px;
-  background: linear-gradient(to bottom right, #ffe6f0, #ffe6fa);
-  border: 6px solid #ffb6c1;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
-  max-width: 400px;
+  box-shadow: 0 4px 16px rgba(255, 182, 193, 0.3);
+  width: 90%;
+  max-width: 420px;
+  margin: 0 auto 60px;
+}
+
+.video-box {
+  width: 100%;
+  padding-top: 177.78%; /* 9:16 aspect ratio */
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 .video-element {
-  width: auto;
-  height: 500px;
-  max-height: 90vh;
-  border: 4px solid #d63384;
-  border-radius: 16px;
-  background-color: #fff;
-  box-shadow: inset 0 0 10px rgba(255, 182, 193, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover;
 }
-
 
 .video-caption {
   font-size: 1rem;
   color: #d63384;
   font-weight: bold;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 12px 18px;
-  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
   border-radius: 10px;
-  max-width: 90%;
+  margin-top: 20px;
   box-shadow: 0 2px 6px rgba(255, 182, 193, 0.2);
 }
 
-/* Mobile Adjustments */
 @media (max-width: 540px) {
   body {
     padding-top: 80px;
     padding-bottom: 100px;
-  }
-
-  .logo h1 {
-    font-size: 2rem;
   }
 
   .video-title {
@@ -305,15 +315,5 @@ body::after {
   main p {
     font-size: 1rem;
     padding: 14px 18px;
-  }
-}
-@media (max-width: 600px) {
-  .video-element {
-    height: 360px;
-  }
-
-  .video-caption {
-    font-size: 0.9rem;
-    padding: 10px;
   }
 }
